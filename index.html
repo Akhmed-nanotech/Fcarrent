@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      data-i18n-content="metaDesc"
+      content="Fcarrent — аренда автомобилей: Toyota Sienna, Chevrolet Captiva и Kia Carnival."
+    />
+    <title data-i18n="pageTitle">Fcarrent — аренда автомобилей</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="#home">Fcarrent</a>
+      <nav id="site-nav" class="site-nav" aria-label="Основное меню" data-i18n-aria="navAria">
+        <ul>
+          <li><a href="#fleet" data-i18n="navFleet">Автопарк</a></li>
+          <li><a href="#how-it-works" data-i18n="navHow">Как это работает</a></li>
+          <li><a href="#pricing" data-i18n="navPricing">Цены</a></li>
+          <li><a href="#contact" data-i18n="navContact">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Язык" data-i18n-aria="langAria">
+          <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          data-i18n="menu"
+        >
+          Меню
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <p class="eyebrow" data-i18n="eyebrow">Местная аренда авто</p>
+        <h1 data-i18n="heroTitle">Арендуйте авто за минуты. Езжайте спокойно.</h1>
+        <p data-i18n="heroLead">
+          Понятные цены, ухоженные машины и выдача, которая подходит под ваш график.
+        </p>
+        <a class="button" href="#contact" data-i18n="bookCar">Забронировать</a>
+        <a class="button button-secondary" href="#fleet" data-i18n="seeFleet">Смотреть автопарк</a>
+      </section>
+
+      <section id="fleet" class="fleet">
+        <h2 data-i18n="fleetTitle">Наш автопарк</h2>
+        <p data-i18n="fleetLead">Нажмите на автомобиль, чтобы выбрать его в заявке.</p>
+
+        <a class="car-card" href="#contact" data-car="sienna">
+          <img
+            src="images/sienna.webp"
+            alt="Toyota Sienna, красный минивэн"
+            data-i18n-alt="altSienna"
+            width="640"
+            height="400"
+          />
+          <div class="car-body">
+            <h3>Toyota Sienna</h3>
+            <ul class="car-specs">
+              <li><span data-i18n="specYear">Год</span>: 2021</li>
+              <li>
+                <span data-i18n="specEngine">Двигатель</span>:
+                <span data-i18n="engineHybrid">Гибрид</span>
+              </li>
+              <li><span data-i18n="specSeats">Мест</span>: 8</li>
+              <li>
+                <span data-i18n="specColor">Цвет</span>:
+                <span data-i18n="colorRed">Красный</span>
+              </li>
+            </ul>
+            <p class="car-price" data-i18n="priceFrom">от 250 SAR</p>
+            <span class="button" data-i18n="bookThis">Забронировать</span>
+          </div>
+        </a>
+
+        <a class="car-card" href="#contact" data-car="captiva">
+          <img
+            src="images/Captiva.jpg"
+            alt="Chevrolet Captiva, чёрный кроссовер"
+            data-i18n-alt="altCaptiva"
+            width="640"
+            height="400"
+          />
+          <div class="car-body">
+            <h3>Chevrolet Captiva</h3>
+            <ul class="car-specs">
+              <li><span data-i18n="specYear">Год</span>: 2021</li>
+              <li>
+                <span data-i18n="specEngine">Двигатель</span>:
+                <span data-i18n="engineGas">Бензин</span>
+              </li>
+              <li><span data-i18n="specSeats">Мест</span>: 7</li>
+              <li>
+                <span data-i18n="specColor">Цвет</span>:
+                <span data-i18n="colorBlack">Чёрный</span>
+              </li>
+            </ul>
+            <p class="car-price" data-i18n="priceFrom">от 250 SAR</p>
+            <span class="button" data-i18n="bookThis">Забронировать</span>
+          </div>
+        </a>
+
+        <a class="car-card" href="#contact" data-car="carnival">
+          <img
+            src="images/Carnival.jpg"
+            alt="Kia Carnival, чёрный минивэн"
+            data-i18n-alt="altCarnival"
+            width="640"
+            height="400"
+          />
+          <div class="car-body">
+            <h3>Kia Carnival</h3>
+            <ul class="car-specs">
+              <li><span data-i18n="specYear">Год</span>: 2018</li>
+              <li>
+                <span data-i18n="specEngine">Двигатель</span>:
+                <span data-i18n="engineDiesel">Дизель</span>
+              </li>
+              <li><span data-i18n="specSeats">Мест</span>: 8</li>
+              <li>
+                <span data-i18n="specColor">Цвет</span>:
+                <span data-i18n="colorBlack">Чёрный</span>
+              </li>
+            </ul>
+            <p class="car-price" data-i18n="priceFrom">от 250 SAR</p>
+            <span class="button" data-i18n="bookThis">Забронировать</span>
+          </div>
+        </a>
+      </section>
+
+      <section id="how-it-works" class="how-it-works">
+        <h2 data-i18n="howTitle">Как это работает</h2>
+        <ol>
+          <li>
+            <h3 data-i18n="how1Title">Выберите авто</h3>
+            <p data-i18n="how1Text">
+              Toyota Sienna, Chevrolet Captiva или Kia Carnival — нажмите на карточку.
+            </p>
+          </li>
+          <li>
+            <h3 data-i18n="how2Title">Укажите даты</h3>
+            <p data-i18n="how2Text">
+              Заполните заявку: имя, Telegram, даты получения и возврата.
+            </p>
+          </li>
+          <li>
+            <h3 data-i18n="how3Title">Свяжитесь с нами</h3>
+            <p data-i18n="how3Text">
+              Позвоните, напишите в WhatsApp или Telegram — подтвердим бронь.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="pricing" class="pricing">
+        <h2 data-i18n="pricingTitle">Простые цены</h2>
+        <p data-i18n="pricingLead">
+          Все три автомобиля — от 250 SAR. Условия страхования объясняем до брони.
+        </p>
+        <ul>
+          <li data-i18n="pricing1">Toyota Sienna, Chevrolet Captiva, Kia Carnival — от 250 SAR</li>
+          <li data-i18n="pricing2">Бесплатная отмена за 24 часа до получения</li>
+          <li data-i18n="pricing3">Детские кресла и дополнительные водители — по запросу</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2 data-i18n="contactTitle">Связаться и забронировать</h2>
+        <p data-i18n="contactLead">
+          Звонок, WhatsApp или Telegram — самый быстрый способ. Заявку можно оставить ниже.
+        </p>
+
+        <div class="contact-actions">
+          <a class="contact-btn contact-call" href="tel:+966547622434">
+            <span data-i18n="call">Позвонить</span>
+            <span class="contact-detail">+966 547 622 434</span>
+          </a>
+          <a
+            class="contact-btn contact-wa"
+            href="https://wa.me/966547622434"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>WhatsApp</span>
+            <span class="contact-detail">+966 547 622 434</span>
+          </a>
+          <a
+            class="contact-btn contact-tg"
+            href="https://t.me/ahmad_trvl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Telegram</span>
+            <span class="contact-detail">@ahmad_trvl</span>
+          </a>
+        </div>
+
+        <form action="#" method="post">
+          <label for="name" data-i18n="labelName">Имя</label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+
+          <label for="telegram" data-i18n="labelTelegram">Имя пользователя Telegram</label>
+          <input
+            id="telegram"
+            name="telegram"
+            type="text"
+            autocomplete="username"
+            placeholder="@username"
+            required
+          />
+
+          <label for="car" data-i18n="labelCar">Автомобиль</label>
+          <select id="car" name="car" required>
+            <option value="" data-i18n="selectCar">Выберите автомобиль</option>
+            <option value="sienna">Toyota Sienna</option>
+            <option value="captiva">Chevrolet Captiva</option>
+            <option value="carnival">Kia Carnival</option>
+          </select>
+
+          <label for="pickup" data-i18n="labelPickup">Дата получения</label>
+          <input id="pickup" name="pickup" type="date" required />
+
+          <label for="return" data-i18n="labelReturn">Дата возврата</label>
+          <input id="return" name="return" type="date" required />
+
+          <label for="message" data-i18n="labelMessage">Сообщение</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+
+          <button type="submit" data-i18n="submit">Отправить заявку</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p data-i18n="footerCopy">&copy; 2026 Fcarrent. Все права защищены.</p>
+      <p data-i18n="footerHours">Ежедневно 8:00–20:00</p>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

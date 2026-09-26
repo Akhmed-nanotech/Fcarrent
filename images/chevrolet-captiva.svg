@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Chevrolet Captiva">
+  <rect width="640" height="400" fill="#ece7df"/>
+  <rect x="0" y="268" width="640" height="132" fill="#d9d0c4"/>
+  <path d="M78 252c16-70 54-118 128-132 82-16 152-16 230 0 64 14 102 54 124 132H78z" fill="#1c1c1c"/>
+  <path d="M176 122h208c24 0 42 16 50 38l16 48H160l16-48c8-22 26-38 50-38z" fill="#9ec8dc"/>
+  <circle cx="196" cy="260" r="38" fill="#111"/>
+  <circle cx="196" cy="260" r="18" fill="#bdbdbd"/>
+  <circle cx="458" cy="260" r="38" fill="#111"/>
+  <circle cx="458" cy="260" r="18" fill="#bdbdbd"/>
+  <rect x="250" y="232" width="140" height="10" rx="4" fill="#3a3a3a"/>
+</svg>

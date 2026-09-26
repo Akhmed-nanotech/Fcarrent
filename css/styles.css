@@ -1,0 +1,529 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Noto+Serif:wght@600;700&display=swap");
+
+:root {
+  --ink: #12202b;
+  --ink-soft: #3d4f5c;
+  --paper: #f6f1e8;
+  --white: #fffcf7;
+  --line: #d9cfc0;
+  --accent: #c45c26;
+  --accent-dark: #9a4418;
+  --navy: #1b3a4b;
+  --wa: #1f8a4c;
+  --tg: #1d6fa5;
+  --shadow: 0 12px 32px rgba(18, 32, 43, 0.08);
+  --radius: 14px;
+  --max: 72rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Outfit, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Fraunces, "Noto Serif", Georgia, serif;
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--navy);
+}
+
+.site-header,
+.hero,
+.fleet,
+.how-it-works,
+.pricing,
+.contact,
+.site-footer {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--paper) 92%, white);
+  backdrop-filter: blur(8px);
+}
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-nav {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.logo {
+  font-family: Fraunces, "Noto Serif", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.45rem;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.lang-switch button {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0 0.65rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lang-switch button[aria-pressed="true"] {
+  background: var(--navy);
+  color: white;
+}
+
+.nav-toggle {
+  display: none;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  min-height: 2.75rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--accent);
+}
+
+.hero {
+  padding: 3.5rem 0 4.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  max-width: 18ch;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  margin-bottom: 1rem;
+}
+
+.hero > p {
+  max-width: 42ch;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+}
+
+.button,
+.contact form button {
+  display: inline-block;
+  margin: 0.35rem 0.5rem 0 0;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid var(--accent);
+  cursor: pointer;
+  font: inherit;
+}
+
+.button:hover,
+.contact form button:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.button-secondary:hover {
+  background: var(--navy);
+  color: white;
+}
+
+.fleet,
+.how-it-works,
+.pricing,
+.contact {
+  padding: 3.5rem 0;
+}
+
+.fleet h2,
+.how-it-works h2,
+.pricing h2,
+.contact h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.fleet {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+.fleet h2,
+.fleet > p {
+  grid-column: 1 / -1;
+}
+
+.car-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+}
+
+.car-card:hover,
+.car-card:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.car-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #e8dfd2;
+}
+
+.car-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.1rem 1.15rem 1.2rem;
+}
+
+.car-specs {
+  list-style: none;
+  margin: 0 0 0.85rem;
+  padding: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.car-specs li + li {
+  margin-top: 0.2rem;
+}
+
+.car-price {
+  margin: auto 0 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.car-card .button {
+  margin: 0;
+  align-self: start;
+  pointer-events: none;
+}
+
+.how-it-works ol {
+  display: grid;
+  gap: 1.25rem;
+  list-style: none;
+  counter-reset: step;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.how-it-works li {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.3rem 1.1rem;
+  border: 1px solid var(--line);
+  counter-increment: step;
+}
+
+.how-it-works li h3::before {
+  content: counter(step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: 0.55rem;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  font-family: Outfit, sans-serif;
+  font-size: 0.85rem;
+  vertical-align: middle;
+}
+
+.pricing {
+  background: var(--navy);
+  color: var(--white);
+  width: 100%;
+  padding: 3.5rem min(2rem, 5vw);
+  margin: 0;
+}
+
+.pricing h2,
+.pricing p,
+.pricing ul {
+  width: min(100%, var(--max));
+  margin-inline: auto;
+}
+
+.pricing ul {
+  margin-top: 1.25rem;
+  padding-left: 1.2rem;
+}
+
+.pricing li + li {
+  margin-top: 0.45rem;
+}
+
+.contact-actions {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 0 2rem;
+}
+
+.contact-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.15rem;
+  min-height: 3.25rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+}
+
+.contact-detail {
+  font-weight: 500;
+  font-size: 0.9rem;
+  opacity: 0.92;
+}
+
+.contact-call {
+  background: var(--navy);
+}
+
+.contact-wa {
+  background: var(--wa);
+}
+
+.contact-tg {
+  background: var(--tg);
+}
+
+.contact form {
+  display: grid;
+  gap: 0.35rem;
+  max-width: 32rem;
+}
+
+.contact label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-top: 0.7rem;
+}
+
+.contact input,
+.contact select,
+.contact textarea {
+  font: inherit;
+  padding: 0.7rem 0.8rem;
+  min-height: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--ink);
+}
+
+.contact textarea {
+  min-height: 6rem;
+}
+
+.contact input:focus,
+.contact select:focus,
+.contact textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.contact form button {
+  margin-top: 1.1rem;
+  justify-self: start;
+}
+
+.form-status {
+  margin: 0.85rem 0 0;
+  font-weight: 500;
+}
+
+.form-status.is-success {
+  color: var(--navy);
+}
+
+.form-status.is-error {
+  color: var(--accent-dark);
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 2rem 0 2.5rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 700px) {
+  .fleet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .how-it-works ol {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-actions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 699px) {
+  body {
+    padding-bottom: 5.25rem;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .site-nav {
+    display: none;
+    flex-basis: 100%;
+    order: 3;
+    margin: 0;
+  }
+
+  .header-tools {
+    margin-left: auto;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    padding: 0.5rem 0 0.75rem;
+  }
+
+  .site-header.nav-open .site-nav {
+    display: block;
+  }
+
+  .hero {
+    padding: 2.25rem 0 3rem;
+  }
+
+  .contact-actions {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0.45rem 0.55rem calc(0.45rem + env(safe-area-inset-bottom));
+    background: var(--white);
+    border-top: 1px solid var(--line);
+  }
+
+  .contact-btn {
+    min-height: 3.5rem;
+    padding: 0.45rem 0.3rem;
+    align-items: center;
+    text-align: center;
+    font-size: 0.82rem;
+  }
+
+  .contact-detail {
+    display: none;
+  }
+}

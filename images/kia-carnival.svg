@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Kia Carnival">
+  <rect width="640" height="400" fill="#eee8de"/>
+  <rect x="0" y="268" width="640" height="132" fill="#ddd2c4"/>
+  <path d="M70 248c10-58 42-118 128-136 92-20 178-18 268 4 62 16 98 58 112 132H70z" fill="#2a2a2a"/>
+  <path d="M158 118h248c26 0 46 14 54 36l14 50H144l14-50c8-22 28-36 54-36z" fill="#8fb9cc"/>
+  <circle cx="178" cy="256" r="38" fill="#111"/>
+  <circle cx="178" cy="256" r="18" fill="#c4c4c4"/>
+  <circle cx="468" cy="256" r="38" fill="#111"/>
+  <circle cx="468" cy="256" r="18" fill="#c4c4c4"/>
+  <rect x="236" y="228" width="168" height="10" rx="4" fill="#444"/>
+</svg>
