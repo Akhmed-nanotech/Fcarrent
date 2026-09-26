@@ -65,7 +65,9 @@ const translations = {
     formDates: "Дата возврата не может быть раньше даты получения.",
     formSendError:
       "Не удалось отправить заявку. Позвоните или напишите в WhatsApp / Telegram.",
-    formSuccess: "Спасибо. Заявка отправлена. Мы свяжемся с вами.",
+    telegramCta: "Написать нам в Telegram",
+    formSuccess:
+      "Заявка отправлена ✅ Мы получили вашу заявку и свяжемся с вами в Telegram.",
   },
   en: {
     pageTitle: "Fcarrent — car rental",
@@ -132,7 +134,9 @@ const translations = {
     formDates: "Return date cannot be earlier than pickup date.",
     formSendError:
       "Could not send the request. Please call or message us on WhatsApp / Telegram.",
-    formSuccess: "Thank you. Your request was sent. We will contact you.",
+    telegramCta: "Message us on Telegram",
+    formSuccess:
+      "Booking request sent ✅ We received your request and will contact you on Telegram.",
   },
 };
 
@@ -267,10 +271,24 @@ if (bookingForm) {
     bookingForm.append(status);
   }
 
+  let telegramLink = bookingForm.querySelector(".form-telegram");
+  if (!telegramLink) {
+    telegramLink = document.createElement("a");
+    telegramLink.className = "button form-telegram";
+    telegramLink.href = "https://t.me/ahmad_trvl";
+    telegramLink.target = "_blank";
+    telegramLink.rel = "noopener noreferrer";
+    telegramLink.hidden = true;
+    telegramLink.dataset.i18n = "telegramCta";
+    telegramLink.textContent = t("telegramCta");
+    bookingForm.append(telegramLink);
+  }
+
   bookingForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     status.textContent = "";
     status.classList.remove("is-success", "is-error");
+    telegramLink.hidden = true;
 
     if (!bookingForm.checkValidity()) {
       bookingForm.reportValidity();
@@ -315,6 +333,8 @@ if (bookingForm) {
 
     status.textContent = t("formSuccess");
     status.classList.add("is-success");
+    telegramLink.textContent = t("telegramCta");
+    telegramLink.hidden = false;
     const selectedCar = carSelect?.value;
     bookingForm.reset();
     if (selectedCar) selectCar(selectedCar);
