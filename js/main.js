@@ -63,8 +63,9 @@ const translations = {
     footerHours: "Ежедневно 8:00–20:00",
     formError: "Заполните обязательные поля.",
     formDates: "Дата возврата не может быть раньше даты получения.",
-    formSuccess:
-      "Спасибо. Заявка заполнена на этой странице — на сервер она пока не отправляется. Напишите нам в WhatsApp или Telegram.",
+    formSendError:
+      "Не удалось отправить заявку. Позвоните или напишите в WhatsApp / Telegram.",
+    formSuccess: "Спасибо. Заявка отправлена. Мы свяжемся с вами.",
   },
   en: {
     pageTitle: "Fcarrent — car rental",
@@ -129,10 +130,14 @@ const translations = {
     footerHours: "Open daily 8:00–20:00",
     formError: "Please fill in the required fields.",
     formDates: "Return date cannot be earlier than pickup date.",
-    formSuccess:
-      "Thanks. Your request is ready on this page — it is not sent to a server yet. Message us on WhatsApp or Telegram.",
+    formSendError:
+      "Could not send the request. Please call or message us on WhatsApp / Telegram.",
+    formSuccess: "Thank you. Your request was sent. We will contact you.",
   },
 };
+
+const BOOKING_URL =
+  "https://soft-base-8f0afcarrent-booking.saidakhmad-shavkatov-011.workers.dev/";
 
 const navToggle = document.querySelector(".nav-toggle");
 const siteHeader = document.querySelector(".site-header");
@@ -262,7 +267,7 @@ if (bookingForm) {
     bookingForm.append(status);
   }
 
-  bookingForm.addEventListener("submit", (event) => {
+  bookingForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     status.textContent = "";
     status.classList.remove("is-success", "is-error");
@@ -278,6 +283,33 @@ if (bookingForm) {
       status.textContent = t("formDates");
       status.classList.add("is-error");
       returnInput.focus();
+      return;
+    }
+
+    const payload = {
+      name: bookingForm.elements.namedItem("name").value.trim(),
+      telegram: bookingForm.elements.namedItem("telegram").value.trim(),
+      car: bookingForm.elements.namedItem("car").value,
+      pickup: bookingForm.elements.namedItem("pickup").value,
+      return: bookingForm.elements.namedItem("return").value,
+      message: bookingForm.elements.namedItem("message").value.trim(),
+    };
+
+    try {
+      const response = await fetch(BOOKING_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || !result.ok) {
+        status.textContent = t("formSendError");
+        status.classList.add("is-error");
+        return;
+      }
+    } catch {
+      status.textContent = t("formSendError");
+      status.classList.add("is-error");
       return;
     }
 
